@@ -42,8 +42,8 @@ module.exports = function (RED) {
         return
       }
 
-      node.priority = (node.priority < 1 ? 16 : node.priority);
-      node.priority = (node.priority > 16 ? 16 : node.priority);
+      node.priority = (node.priority < 1 ? 16 : node.priority)
+      node.priority = (node.priority > 16 ? 16 : node.priority)
 
       const options = msg.payload.options || { priority: node.priority }
 

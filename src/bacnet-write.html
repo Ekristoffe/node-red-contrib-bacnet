@@ -7,17 +7,17 @@
 -->
 
 <script type="text/javascript">
-  RED.nodes.registerType("BACnet-Write", {
-    category: "BACnet",
+  RED.nodes.registerType('BACnet-Write', {
+    category: 'BACnet',
     color: "#16BAC4",
     defaults: {
-      name: {value: ""},
-      objectType: {value: "", required:true, validate: RED.validators.number()},
+      name: {value: ''},
+      objectType: {value: '', required:true, validate: RED.validators.number()},
       instance: {type: "BACnet-Instance", required:true},
-      valueTag: {value: "", required:true}, validate: RED.validators.number(),
-      valueValue: {value: ""},
-      propertyId: {value: "", required:true, validate: RED.validators.number()},
-      priority: {value: ""},
+      valueTag: {value: '', required:true, validate: RED.validators.number()},
+      valueValue: {value: ''},
+      propertyId: {value: '', required:true, validate: RED.validators.number()},
+      priority: {value: ''},
       device: {type: "BACnet-Device", required:true},
       server: {type: "BACnet-Client", required:true},
       multipleWrite: {value: false}
@@ -50,9 +50,9 @@
       let objectTypeField = $("#node-input-objectType")
 
       objectTypeLookupField.click(function () {
-        objectTypeLookupField.addClass("disabled")
-        $.getJSON("/bacnet/ObjectTypes", function (data) {
-          objectTypeLookupField.removeClass("disabled")
+        objectTypeLookupField.addClass('disabled')
+        $.getJSON('/bacnet/ObjectTypes', function (data) {
+          objectTypeLookupField.removeClass('disabled')
           node.lookupItems = []
 
           $.each(data, function (i, entry) {
@@ -81,9 +81,9 @@
       let datatypeField = $("#node-input-propertyId")
 
       datatypeLookupField.click(function () {
-        datatypeLookupField.addClass("disabled")
-        $.getJSON("/bacnet/PropertyIds", function (data) {
-          datatypeLookupField.removeClass("disabled")
+        datatypeLookupField.addClass('disabled')
+        $.getJSON('/bacnet/PropertyIds', function (data) {
+          datatypeLookupField.removeClass('disabled')
           node.lookupItems = []
 
           $.each(data, function (i, entry) {
@@ -112,9 +112,9 @@
       let tagTypeField = $("#node-input-valueTag")
 
       tagTypeLookupField.click(function () {
-        tagTypeLookupField.addClass("disabled")
-        $.getJSON("/bacnet/ApplicationTags", function (data) {
-          tagTypeLookupField.removeClass("disabled")
+        tagTypeLookupField.addClass('disabled')
+        $.getJSON('/bacnet/ApplicationTags', function (data) {
+          tagTypeLookupField.removeClass('disabled')
           node.lookupItems = []
 
           $.each(data, function (i, entry) {
